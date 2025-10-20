@@ -1,0 +1,207 @@
+/* 
+  O seletor universal (*) aplica as regras para TODOS os elementos da página.
+  Aqui ele remove margens e espaçamentos padrão e define o modelo de caixa.
+*/
+* {
+  margin: 0; /* Remove a margem padrão dos elementos */
+  padding: 0; /* Remove o preenchimento interno padrão */
+  box-sizing: border-box; /* Inclui a borda e o padding dentro da largura/altura total do elemento */
+}
+
+/* 
+  Define variáveis CSS globais.
+  Essas variáveis podem ser reutilizadas em qualquer lugar do CSS.
+*/
+:root {
+  --text-color: white;  /* variaveis que são definidas no :root e podem ser utilizada em qualquer lugar do css.*/
+  --bg-url: url(assets/bg-mobile.jpg); /* Define a imagem de fundo padrão */
+  --stroke-color: rgba(255, 255, 255, 0.5); /* Define a cor da borda padrão */  
+  --surface-color: rgba(255, 255, 255, 0.05); /* Define a cor do fundo padrão */
+  --surface-color-hover: rgba(255, 255, 255, 0.2); /* Define a cor do fundo no hover */
+  --highlight-color: rgba(255, 255, 255, 0.2); /* Define a cor de destaque */
+}
+
+/* 
+  Define o tema escuro (dark) e claro (light).
+  Altera as variáveis CSS para cores e imagens de fundo diferentes.
+*/
+.light {
+  --text-color: black; /* Altera a cor do texto para preto no tema claro */
+  --bg-url: url(assets/bg-mobile-light.jpg); /* Altera a imagem de fundo para o tema claro */
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.5) /* Altera a cor da borda para preto semi-transparente no tema claro */
+  --surface-color-hover: rgba(255, 255, 255, 0.2); /* Altera a cor do fundo no hover para preto mais opaco no tema claro */
+  --highlight-color: rgba(0, 0, 0, 0.1); /* Define a cor de destaque */
+}
+
+/* 
+  Define o estilo do corpo (body) da página.
+  Configura a imagem de fundo e seu comportamento visual.
+*/
+body {
+  background: var(--bg-url) no-repeat top center/cover; /* Define a imagem de fundo */
+}
+
+/*
+  Aplica a todas as tags dentro do body (*)
+  Define a fonte e a cor padrão do texto.
+*/
+body * {
+  font-family: "Inter", sans-serif; /* Define a fonte geral */
+  color: var(--text-color); /* Define a cor do texto como branco */
+}
+
+/* 
+  Define a área principal (container) que envolve o conteúdo.
+  Centraliza e limita a largura máxima.
+*/
+#container {
+  width: 360px; /* Define a largura máxima do conteúdo */
+  margin: 56px auto 0px;
+  padding: 0 24px; /* Centraliza horizontalmente (auto nas laterais) e dá margem superior */
+}
+
+/*
+  Estiliza a seção de perfil, que provavelmente contém a imagem e o nome do usuário.
+*/
+#profile {
+  text-align: center; /* Centraliza o conteúdo dentro da seção */
+  padding: 24px; /* Dá espaço interno em todos os lados */
+}
+
+/*
+  Define o tamanho da imagem do perfil.
+*/
+#profile img {
+  width: 112px; /* Define a largura fixa da imagem do perfil */
+}
+
+/*
+  Estilo do parágrafo dentro da seção de perfil (ex: nome ou descrição do usuário).
+*/
+#profile p {
+  font-weight: 400; /* Define o peso da fonte (grossura do texto) */
+  line-height: 24px; /* Define a altura das linhas (espaçamento entre linhas) */
+  margin-top: 8px; /* Espaçamento acima do parágrafo */
+}
+
+/* switch container */
+#switch {
+  position: relative; /* Permite o posicionamento absoluto dos elementos filhos */
+  width: 64px; /* Define a largura fixa do contêiner */
+
+  margin: 4px auto; /* Centraliza horizontalmente com margem automática nas laterais */
+}
+
+/* switch button */
+#switch button {
+  width: 32px; /* Define a largura fixa do botão */
+  height: 32px; /* Define a altura fixa do botão */
+  background: white; /* Define a cor de fundo do botão como branco */
+  border: 0; /* Remove a borda padrão do botão */
+  border-radius: 50%; /* Deixa o botão circular */
+
+  position: absolute; /* Permite posicionar o botão em relação ao contêiner pai */
+  top: 50%; /* Centraliza o botão verticalmente no contêiner */
+  left: 0; /* Alinha o botão à esquerda do contêiner */
+  z-index: 1; /* Garante que o botão fique acima do contêiner do switch */
+  transform: translateY(-50%); /* Centraliza verticalmente o botão em relação ao contêiner */
+}
+
+.light #switch button {
+  right: 0; /* Alinha o botão à direita no tema claro */
+  left: initial; /* Reseta o alinhamento à esquerda */
+}
+
+/* 
+  Estiliza o contêiner do switch (botão de alternância).
+  Centraliza o botão e define o layout.
+*/
+#switch span {
+  display: block; /* Transforma o span em um bloco para aplicar largura e altura */
+  width: 64px; /* Define a largura fixa do contêiner */
+  height: 24px; /* Define a altura fixa do contêiner */
+  background: var(--surface-color); /* Define a cor de fundo do contêiner */
+  border: 1px solid var(--stroke-color); /* Define a cor da borda do contêiner */
+  --webkit-backdrop-filter: blur(4px); /* Aplica um leve desfoque no fundo (efeito vidro fosco) */
+  border-radius: 9999px; /* Deixa o contêiner com bordas totalmente arredondadas (pílula) */
+}
+
+/* 
+  Seção que estiliza a lista de links (ul) e seus itens.
+*/
+ul {
+  list-style: none; /* Remove os marcadores padrão da lista (bolinhas) */
+
+  display: flex; /* Transforma a lista em um contêiner flexível */
+  flex-direction: column; /* Coloca os itens um embaixo do outro */
+  gap: 16px; /* Espaçamento entre cada item da lista */
+  padding: 24px 0; /* Espaçamento interno acima e abaixo da lista */
+}
+
+/*
+  Estilo dos links dentro dos itens da lista.
+*/
+ul li a {
+  display: flex; /* Permite usar alinhamento flexível */
+  align-items: center; /* Centraliza verticalmente o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente o conteúdo */
+
+  padding: 16px 24px; /* Espaçamento interno do link */
+
+  background: var(--surface-color);  /* Define a cor de fundo */
+  border: 1px solid var(--stroke-color); /* Define a cor da borda */
+  border-radius: 8px; /* Arredonda os cantos do botão */
+
+  backdrop-filter: blur(
+    4px
+  ); /* Aplica um leve desfoque no fundo (efeito vidro fosco) */
+  -webkit-backdrop-filter: blur(
+    4px
+  ); /* Compatibilidade com navegadores baseados em WebKit (Safari) */
+
+  text-decoration: none; /* Remove o sublinhado padrão do link */
+  font-weight: 500; /* Deixa o texto um pouco mais grosso */
+
+  transition: background 0.2s; /* Suaviza a transição da cor de fundo no hover */
+}
+
+/*
+  Pseudo-seletor que altera o estilo quando o mouse passa sobre o link.
+*/
+ul li a:hover {
+  background: var(--surface-color-hover); /* Fundo mais opaco no hover */
+  border: 1.5px solid var(--text-color); /* Deixa a borda um pouco mais grossa e totalmente branca */
+}
+
+/* social links */
+
+#social-links {
+  display: flex; /* Transforma o contêiner em um flexbox */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+
+  padding: 24px 0; /* Espaçamento interno acima e abaixo */
+
+  font-size: 24px; /* Define o tamanho dos ícones sociais */
+}
+
+#social-links a {
+  display: flex; /* Transforma o link em um flexbox */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  padding: 16px; /* Espaçamento interno do link */
+  transition: background 0.2s; /* Suaviza a transição da cor de fundo no hover */
+  padding: 16px; /* Espaçamento interno para aumentar a área clicável */
+
+  transition: background 0.2s;
+  border-radius: 50%; /* Deixa o fundo circular */
+}
+
+#social-links a:hover {
+  background: var(--highlight-color); /* Fundo mais opaco no hover */
+}
+
+footer {
+  padding: 24px 0; /* Espaçamento interno acima e abaixo */
+  text-align: center; /* Centraliza o texto horizontalmente */
+  font-size: 14px; /* Define o tamanho da fonte */
+}

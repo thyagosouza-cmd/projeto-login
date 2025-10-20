@@ -1,0 +1,111 @@
+<!-- Define o tipo de documento HTML5 -->
+<!DOCTYPE html>
+
+<!-- Tag raiz do documento. O atributo lang="pt-br" indica que o idioma principal da página é o português do Brasil -->
+<html lang="pt-br" class="">
+  <head>
+    <!-- Define o conjunto de caracteres usado na página (UTF-8 é o padrão mais comum, compatível com acentuação) -->
+    <meta charset="UTF-8" />
+
+    <!-- Torna o layout responsivo (ajusta o site para telas de celular, tablet e computador) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Importa o arquivo CSS externo que contém os estilos da página -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Define o título que aparece na aba do navegador -->
+    <title>Dev links</title>
+  </head>
+
+  <body>
+    <!-- Contêiner principal que agrupa todo o conteúdo da página -->
+    <div id="container">
+      <!-- Seção de perfil do usuário -->
+      <div id="profile">
+        <!-- Imagem de perfil padrão (modo escuro). 
+              Essa imagem muda dinamicamente no JavaScript quando o tema claro é ativado -->
+        <img src="assets/avatar.png" alt="perfil" />
+
+        <!-- Nome de usuário ou identificador. Pode ser substituído pelo seu @ -->
+        <p>@thiagobrito</p>
+      </div>
+
+      <!-- Botão de alternância de modo (claro/escuro) -->
+      <!-- O atributo onclick chama a função "togglemode()" definida no script.js -->
+      <div id="switch" onclick="togglemode()">
+        <!-- O botão em si, que contém um emoji de lua (modo escuro). 
+              Pode ser trocado por ícones personalizados -->
+        <button>🌚</button>
+
+        <!-- Elemento usado para o efeito visual do botão (como um círculo que se move, estilo interruptor) -->
+        <span></span>
+      </div>
+
+      <!-- Lista de links principais (usando a tag <ul> para lista e <li> para cada item) -->
+      <ul>
+        <li>
+          <!-- Cada link é representado pela tag <a>. 
+                O atributo href define o destino do link -->
+          <a href="#">Inscreve-se</a>
+        </li>
+
+        <li>
+          <a href="http://">Baixar meu e-book</a>
+        </li>
+
+        <li>
+          <a href="http://">Ver meu portifolio</a>
+        </li>
+
+        <li>
+          <!-- O atributo target="_blank" faz o link abrir em uma nova aba -->
+          <a href="http://rocketseat.com.br/explorer" target="_blank">
+            Conheça o explorer
+          </a>
+        </li>
+      </ul>
+
+      <!-- Seção de links sociais (ícones que levam às redes do usuário) -->
+      <div id="social-links">
+        <!-- Cada link leva a uma rede social diferente -->
+
+        <!-- Link para o GitHub -->
+        <a href="http://github.com/thyagosouzacmd" target="_blank">
+          <!-- Ícone do GitHub fornecido pela biblioteca Ionicons -->
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+
+        <!-- Link para o Instagram -->
+        <a href="http://instagram.com/thiago_sz7" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+
+        <!-- Link para o LinkedIn (⚠️ o endereço está incorreto: o certo seria linkedin.com/in/thyagosouzadev) -->
+        <a href="http://logo-linkedin.com/thyagosouzadev" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+
+        <!-- Link para o canal do YouTube -->
+        <a href="http://youtube.com/thyagosouzacmd" target="_blank">
+          <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+      </div>
+    </div>
+
+    <!-- Script do Ionicons, que fornece os ícones das redes sociais.
+          O atributo type="module" permite importar módulos ES6 (versão moderna de JS) -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+
+    <!-- Rodapé da página -->
+    <footer>
+      <!-- Texto de créditos -->
+      <p>Feito com 💜 por Thiago Brito</p>
+    </footer>
+
+    <!-- Importa o arquivo JavaScript externo com a lógica do modo claro/escuro -->
+    <script src="script.js"></script>
+  </body>
+</html>
