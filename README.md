@@ -1,6 +1,5 @@
-# projeto-login
 
-<h1 align="center"> Projeto-login</h1>
+<h1 align="center"> DevLinks</h1>
 
 <p align="center">
 Evento exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnologias WEB.
@@ -34,7 +33,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-Projeto voltado para uma pagina de login
+O DevLinks é um agregador de links para usar como cartão de visitas online.
 
 ## 🔖 Layout
 
