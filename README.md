@@ -1,6 +1,6 @@
 # projeto-login
 
-<h1 align="center"> NLW #10 Copa </h1>
+<h1 align="center"> Projeto-login</h1>
 
 <p align="center">
 Evento exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnologias WEB.
